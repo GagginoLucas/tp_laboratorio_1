@@ -130,10 +130,16 @@ int funcionSalir()
 		 printf("¿Esta seguro que desea salir? S/N \n");
 		 fflush(stdin);
 		 scanf("%c", &salir);
+		 while(salir != 'S' && salir != 's' && salir != 'N' && salir != 'n')
+		 {
+			 printf("¿Esta seguro que desea salir? S/N \n");
+			 fflush(stdin);
+			 scanf("%c", &salir);
+		 }
 		 if(salir == 'S' || salir == 's')
 		 {
 			 printf("Hasta la pr%cxima!",162);
-			 sleep(3);
+			 sleep(2);
 			 retorno = 0;
 		}
 		 return retorno;
@@ -187,9 +193,6 @@ void cargarDatosForzados()
 		printf(" d) Precio unitario: $ %.2f\n\n", precioPorKilometroAerolineas);
 		printf("La diferencia de precio es de: $ %.2f\n\n", diferenciaDePrecio);
 
-
-
-	system("pause");
 
 }
 

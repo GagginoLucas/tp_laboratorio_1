@@ -96,7 +96,7 @@
 							diferenciaDePrecio = calcularDiferenciaDePrecio(precioLatam, precioAerolineas);
 							flagCalculos = 1;
 							flagCambioDeParametros = 0;
-							printf("\n\nLos calculos se realizaron correctamente!\n\n");
+							printf("\nLos calculos se realizaron correctamente!\n\n");
 							system("pause");
 						}
 				break;
