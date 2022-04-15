@@ -15,7 +15,6 @@
 #include "calculos_tp1.h"
 #include "menu_tp1.h"
 
-
 	int main(void)
 	{
 		setbuf(stdout, NULL);
@@ -75,6 +74,15 @@
 						}
 				break;
 
+				case 5:
+						printf("\nSe cargaron los datos de manera exitosa!\n\n");
+						cargarDatosForzados();
+						precioLatam = 159339;
+						precioAerolineas = 162965;
+						kilometrosIngresados = 7090;
+						menu = 3;
+						/* no break */
+
 				case 3:	if(validarDatos(menu, subMenuPasajes, kilometrosIngresados, precioLatam, precioAerolineas, flagCalculos, flagCambioDeParametros) == 1)
 						{
 							precioConDebitoLatam = realizarCalculo(precioLatam, 1);
@@ -97,17 +105,6 @@
 						{
 						  mostrarResultados(kilometrosIngresados, precioAerolineas, precioConDebitoAerolineas, precioConCreditoAerolineas, precioEnBitcoinAerolineas, precioPorKilometroAerolineas, precioLatam, precioConDebitoLatam, precioConCreditoLatam, precioEnBitcoinLatam, precioPorKilometroLatam, diferenciaDePrecio);
 						}
-				break;
-
-				case 5:
-					//	cargarDatosForzados();	//Realicé esta función que se encarga de Hardcodear los datos, calcular e imprimir,
-											  //todo dentro de la misma función, la dejé sin uso porque nuestros ayudantes de cátedra
-											  //nos dijeron que carguemos los datos para que haya que calcularlos y mostrarlos presionando el 3 y el 4.
-											  //en caso de querer usar la función sacarle el comentario.
-						precioLatam = 159339;
-						precioAerolineas = 162965;
-						kilometrosIngresados = 7090;
-						printf("\nSe cargaron los datos de manera exitosa!\n\n");
 				break;
 
 				case 6: if(funcionSalir() == 0)

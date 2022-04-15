@@ -13,6 +13,7 @@
 #include <time.h>
 #include "calculos_tp1.h"
 
+
 int llamarMenu(float kilometrosIngresados, float precioAerolineas, float precioLatam)
 	{
 		int menu;
