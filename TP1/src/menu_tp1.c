@@ -150,10 +150,7 @@ int llamarSubMenu()
 		return subMenuPasajes;
 	}
 
-void cargarDatosForzados()  //Realicé esta función que se encarga de Hardcodear los datos, calcular e imprimir,
-							//todo dentro de la misma función, la dejé sin uso porque nuestros ayudantes de cátedra
-							//nos dijeron que carguemos los datos para que haya que calcularlos y mostrarlos presionando el 3 y el 4.
-							//en caso de querer usar la función sacar el comentario del Main.
+void cargarDatosForzados()
 {
 
 

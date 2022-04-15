@@ -76,13 +76,13 @@
 
 				case 5:
 						printf("\nSe cargaron los datos de manera exitosa!\n\n");
-						cargarDatosForzados();
-						precioLatam = 159339;
-						precioAerolineas = 162965;
-						kilometrosIngresados = 7090;
-						menu = 3;
+						cargarDatosForzados(); //Carga los datos forzados, calcula y muestra dentro de la función
+						precioLatam = 159339;  //Deja cargado los datos en el menú
+						precioAerolineas = 162965;  //Deja cargado los datos en el menú
+						kilometrosIngresados = 7090; //Deja cargado los datos en el menú
+						menu = 3; //pasa al case 3 sin break así los datos cargados quedan calculados y validados, para que no haya problemas
+								  //en caso de querer volver a mostrar los resultados.
 						/* no break */
-
 				case 3:	if(validarDatos(menu, subMenuPasajes, kilometrosIngresados, precioLatam, precioAerolineas, flagCalculos, flagCambioDeParametros) == 1)
 						{
 							precioConDebitoLatam = realizarCalculo(precioLatam, 1);
