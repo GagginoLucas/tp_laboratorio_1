@@ -14,12 +14,14 @@
 
 #include "calculos_tp1.h"
 #include "menu_tp1.h"
+#define RESET "\x1b[0m"
+#define GREEN "\x1b[32m"
+#define RED "\x1b[31m"
 
 	int main(void)
 	{
 		setbuf(stdout, NULL);
 
-		//Precios de variables inicializados
 		float kilometrosIngresados;
 		float precioLatam;
 		float precioAerolineas;
@@ -27,7 +29,6 @@
 		int menu;
 		int subMenuPasajes;
 
-		//Precios de los calculos
 		float precioConDebitoLatam;
 		float precioConCreditoLatam;
 		float precioConDebitoAerolineas;
@@ -38,7 +39,6 @@
 		float precioPorKilometroAerolineas;
 		float diferenciaDePrecio;
 
-		//Banderas para validar
 		int flagCalculos;
 		int flagCambioDeParametros;
 
@@ -52,11 +52,13 @@
 
 		do
 		{
+			system("cls");
 			menu = llamarMenu(kilometrosIngresados, precioAerolineas, precioLatam);
 			switch(menu)
 			{
-				case 1: kilometrosIngresados = pedirFlotante("Ingresar kilometros: ", "Error, ingrese una cantidad de kilometros valida(): ", 1, 9999999);
+				case 1: kilometrosIngresados = pedirNumero("Ingresar kilometros: ", 1 , 99999999);
 						flagCambioDeParametros = 1;
+
 				break;
 
 				case 2:	subMenuPasajes = llamarSubMenu();
@@ -64,10 +66,10 @@
 						{
 							switch(subMenuPasajes)
 							{
-								case 1: precioLatam = pedirFlotante("Ingresar el precio de latam: ", "Error, ingrese un precio valido: ",0, 99999999);
+								case 1: precioLatam = pedirNumero("Ingresar el precio de latam: ", 0 , 99999999);
 								flagCambioDeParametros = 1;
 								break;
-								case 2: precioAerolineas = pedirFlotante("Ingresar el precio de Aerolineas: ", "Error, ingrese un precio valido: ",0, 99999999);
+								case 2: precioAerolineas = pedirNumero("Ingresar el precio de Aerolineas: " , 0 , 99999999);
 								flagCambioDeParametros = 1;
 								break;
 							}
@@ -75,7 +77,7 @@
 				break;
 
 				case 5:
-						printf("\nSe cargaron los datos de manera exitosa!\n\n");
+						printf(GREEN"\nSe cargaron los datos de manera exitosa!\n\n"RESET);
 						cargarDatosForzados(); //Carga los datos forzados, calcula y muestra dentro de la función
 						precioLatam = 159339;  //Deja cargado los datos en el menú
 						precioAerolineas = 162965;  //Deja cargado los datos en el menú
@@ -96,7 +98,7 @@
 							diferenciaDePrecio = calcularDiferenciaDePrecio(precioLatam, precioAerolineas);
 							flagCalculos = 1;
 							flagCambioDeParametros = 0;
-							printf("\nLos calculos se realizaron correctamente!\n\n");
+							printf(GREEN"\nLos calculos se realizaron correctamente!\n\n"RESET);
 							system("pause");
 						}
 				break;
@@ -104,6 +106,7 @@
 				case 4: if(validarDatos(menu, subMenuPasajes, kilometrosIngresados, precioLatam, precioAerolineas, flagCalculos, flagCambioDeParametros) == 1)
 						{
 						  mostrarResultados(kilometrosIngresados, precioAerolineas, precioConDebitoAerolineas, precioConCreditoAerolineas, precioEnBitcoinAerolineas, precioPorKilometroAerolineas, precioLatam, precioConDebitoLatam, precioConCreditoLatam, precioEnBitcoinLatam, precioPorKilometroLatam, diferenciaDePrecio);
+						  system("pause");
 						}
 				break;
 
@@ -113,7 +116,7 @@
 						}
 				break;
 
-				default: printf("\nLa opcion %d no es valida\n\n", menu);
+				default: printf(RED"\nLa opcion %d no es valida\n\n"RESET, menu);
 				break;
 			}
 

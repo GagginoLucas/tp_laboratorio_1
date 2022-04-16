@@ -16,6 +16,24 @@
 #include <time.h>
 #include "menu_tp1.h"
 
+	/// @fn double pedirNumero(char[], int, int)
+	/// @brief Función utilizada para pedir números.
+	///
+	/// @param mensaje
+	/// @param min : numero mínimo para validar rango
+	/// @param max : numero máximo para validar rango
+	/// @return : retorna el número ingresado
+	float pedirNumero(char mensaje[], float inferior, float superior);
+
+	/// @fn int validarIngresoNumeros(char[])
+	/// @brief Recorre mediante un for la cadena ingresada para verificar si se ingresaron solo números
+	///
+	/// @param numero
+	/// @return 0 en caso de que haya letras, 1 en caso de que haya solo números
+	int validarIngresoNumeros(char numero[]);
+
+
+
 	/// @fn int pedirEntero(char[], char[], int, int)
 	/// @brief Le pide al usuario el ingreso de un número entero.
 	///
