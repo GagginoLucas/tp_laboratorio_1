@@ -368,7 +368,7 @@ int sortPassengers(Passenger* list, int len, int order)
 						list[i] = list[j];
 						list[j] = buffer;
 					} else if	(strcmpi(list[i].lastName , list[j].lastName) > 0  &&
-								list[i].typePassenger > list[j].typePassenger ) {
+								list[i].typePassenger >= list[j].typePassenger ) {
 								buffer = list[i];
 								list[i] = list[j];
 								list[j] = buffer;
@@ -387,8 +387,8 @@ int sortPassengers(Passenger* list, int len, int order)
 									buffer = list[i];
 									list[i] = list[j];
 									list[j] = buffer;
-								} else if	(strcmpi(list[i].lastName , list[j].lastName) > 0  &&
-											list[i].typePassenger < list[j].typePassenger ) {
+								} else if	(strcmpi(list[i].lastName , list[j].lastName) < 0  &&
+											list[i].typePassenger <= list[j].typePassenger ) {
 											buffer = list[i];
 											list[i] = list[j];
 											list[j] = buffer;

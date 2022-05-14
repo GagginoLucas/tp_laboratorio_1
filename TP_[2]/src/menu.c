@@ -12,6 +12,7 @@ void callMainMenu(	Passenger* listPassengers, int len_ListPassengers,
 	int confirmExit;
 	do {
 		menu = printMainMenu();
+		system("cls");
 		switch(menu) {
 
 			case 1: rtn = sPassenger_LoadPassenger(listPassengers, len_ListPassengers);
@@ -102,7 +103,7 @@ int printMainMenu() {
 	printf("4. INFORMAR\n");
 	printf("5. REALIZAR CARGA FORZADA DE PASAJERXS\n");
 	printf("6. SALIR");
-	menu = getEntero("Seleccione una opcion del menú: ", 1, 6);
+	menu = getEntero("Seleccione una opcion del menu: ", 1, 6);
 	system("cls");
 	return menu;
 }

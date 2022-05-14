@@ -116,7 +116,7 @@ int getEntero(char mensaje[], float min, float max)
 		{
 			do
 			{
-				printf("\n%s: ", mensaje);
+				printf("\n%s ", mensaje);
 				scanf("%s", cadena);
 				auxValidacion = validarIngresoNumeros(cadena);
 
@@ -139,7 +139,7 @@ float getFlotante(char mensaje[], float min, float max) {
 	{
 		do
 		{
-			printf("\n%s: ", mensaje);
+			printf("\n%s ", mensaje);
 			scanf("%s", cadena);
 			auxValidacion = validarIngresoNumeros(cadena);
 		}while(auxValidacion == 0);
