@@ -1,8 +1,8 @@
 #include "parser.h"
 
 
-int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger) {
-
+int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger)
+{
 	int rtn = -1;
 	Passenger* aux = NULL;
 	char idAux[FILESIZE];
@@ -13,7 +13,6 @@ int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger) {
 	char typePassengerAux[FILESIZE];
 	char statusFlightAux[FILESIZE];
 	if(pFile != NULL && pArrayListPassenger != NULL) {
-
 		fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",  idAux, nameAux, lastNameAux,
 																	priceAux, flyCodeAux, typePassengerAux,
 																	statusFlightAux);
@@ -22,17 +21,14 @@ int parser_PassengerFromText(FILE* pFile , LinkedList* pArrayListPassenger) {
 			if(fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]", idAux, nameAux, lastNameAux,
 																		  priceAux, flyCodeAux, typePassengerAux,
 																		  statusFlightAux)==7) {
-
 				aux = Passenger_newParametros(idAux, nameAux, lastNameAux, priceAux, flyCodeAux, typePassengerAux, statusFlightAux);
 				if(aux!=NULL) {
-
 					ll_add(pArrayListPassenger, aux);
 					rtn = 1;
 				}
 			}
 		}while(feof(pFile)==0);
 	}
-
     return rtn;
 }
 
@@ -41,6 +37,7 @@ int parser_PassengerFromBinary(FILE* pFile , LinkedList* pArrayListPassenger) {
 
 	int rtn = -1;
 	Passenger* aux = NULL;
+
 	if(pFile != NULL && pArrayListPassenger != NULL) {
 
 		do
@@ -52,12 +49,16 @@ int parser_PassengerFromBinary(FILE* pFile , LinkedList* pArrayListPassenger) {
 
 					ll_add(pArrayListPassenger, aux);
 					rtn = 1;
+
 				}else {
 
 					Passenger_delete(aux);
+
 				}
 			}
+
 		}while(feof(pFile)==0);
+
 	}
 
 	return rtn;
