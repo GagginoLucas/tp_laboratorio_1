@@ -145,6 +145,7 @@ int Passenger_RemovePassenger(LinkedList* pArrayListPassenger) {
 			index = Passenger_FindPassengerById(pArrayListPassenger,idPassenger);
 			if(index != -1) {
 				pAuxPassenger = ll_get(pArrayListPassenger, index);
+				printHeader();
 				Passenger_printOnePassenger(pAuxPassenger);
 				if(askToConfirm("Esta segurx que desea continuar? Los datos se perderan.\n"
 								"Ingrese 1 para continuar, o cualquier otra numero para cancelar.\n"
@@ -186,7 +187,6 @@ int Passenger_ModifyOnePassenger(LinkedList* pArrayListPassenger, int index) {
 	if(pArrayListPassenger!= NULL) {
 
 		aux = ll_get(pArrayListPassenger, index);
-		Passenger_printOnePassenger(aux);
 		if(aux != NULL) {
 
 			auxToModify = *aux;
@@ -392,7 +392,7 @@ void statusFlightToChar(int statusInt, char* statusStr) {
 
 void printHeader() {
 
-	printf("%10s %20s %20s %10s %20s %20s %20s\n", "ID", "NOMBRE", "APELLIDO", "PRECIO", "TIPO DE PASAJERO", "FLYCODE", "STATUS");
+	printf("%5s | %15s | %15s | %10s | %10s | %15s | %15s\n", "ID", "NOMBRE", "APELLIDO", "PRECIO", "FLYCODE", "TYPEPASSENGER", "STATUSFLIGHT");
 }
 
 int Passenger_listPassengers(LinkedList* pArrayListPassenger) {
@@ -435,7 +435,7 @@ int Passenger_printOnePassenger(Passenger* this) {
 			typePassengerToChar(auxTypePassenger, auxTypePassengerStr);
 			statusFlightToChar(auxStatusFlight, auxStatusFlightStr);
 
-			printf("%10d %20s %20s %10.2f %20s %20s %20s\n", auxID,
+			printf("%5d | %15s | %15s | %10.2f | %10s | %15s | %15s\n", auxID,
 					auxName,
 					auxLastName,
 					auxPrice,
