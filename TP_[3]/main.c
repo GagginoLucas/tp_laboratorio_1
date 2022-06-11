@@ -1,25 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "LinkedList.h"
-#include "Controller.h"
 #include "Passenger.h"
-#include "utn.h"
-/****************************************************
-    Menu:
-     1. Cargar los datos de los pasajeros desde el archivo data.csv (modo texto).
-     2. Cargar los datos de los pasajeros desde el archivo data.csv (modo binario).
-     3. Alta de pasajero
-     4. Modificar datos de pasajero
-     5. Baja de pasajero
-     6. Listar pasajeros
-     7. Ordenar pasajeros
-     8. Guardar los datos de los pasajeros en el archivo data.csv (modo texto).
-     9. Guardar los datos de los pasajeros en el archivo data.csv (modo binario).
-    10. Salir
- *****************************************************/
-
-int cotroller_ReadFileLastID();
 
 int main()
 {
@@ -28,116 +7,128 @@ int main()
 	int flagCsvFileLoaded = 0;
 	int flagBinFileLoaded = 0;
 	int flagFileSaved = 0;
-	cotroller_ReadFileLastID();
+	int flagNewChanges = 0;
 	LinkedList* PassengerList = ll_newLinkedList();
 	do{
-		get_IntInRange(&option, "\nOPCIONES \n1. Cargar los datos en modo texto."
-				"							\n2. Cargar los datos en modo binario."
-				"                         	\n3. Alta de pasajero."
-				"                        	\n4. Modificar datos de pasajero."
-				"							\n5. Baja de pasajero."
-				"                         	\n6. Listar pasajeros."
-				"							\n7. Ordenar pasajeros."
-				"							\n8. Guardar los datos de los pasajeros en el archivo data.csv (modo texto)."
-				"							\n9. Guardar los datos de los pasajeros en el archivo data.bin (modo binario)."
-				"							\n10. Salir."
-				"							\n\nOpcion: ",
-				1, 10);
 
+		option = controller_PrintMainMenu();
 		switch(option){
-		case 1:
-			if(flagCsvFileLoaded == 0){
-				if(flagBinFileLoaded == 0) {
-					if((controller_loadFromText("data.csv",PassengerList)) == 1) {
-					flagCsvFileLoaded = 1;
+			case 1:
+				if(flagCsvFileLoaded == 0){
+					if(flagBinFileLoaded == 0) {
+						if((controller_loadFromText("data.csv",PassengerList)) == 1) {
+						flagCsvFileLoaded = 1;
+						}
+					}else {
+						printf("El archivo ya fue abierto en modo binario.\n");
+						system("pause");
 					}
 				}else {
-					printf("El archivo ya fue abierto en modo binario.\n");
+
+					printf("No se puede abrir el archivo dos veces.\n");
+					system("pause");
+
+				}
+				break;
+			case 2:
+				if(flagBinFileLoaded == 0){
+					if(flagCsvFileLoaded == 0) {
+
+						if((controller_loadFromBinary("data.bin",PassengerList)) == 1) {
+							flagBinFileLoaded = 1;
+						}
+					}else {
+						printf("El archivo ya fue abierto en modo texto.\n");
+						system("pause");
+					}
+				}else {
+					printf("No se puede abrir el archivo dos veces.\n");
+					system("pause");
+				}
+				break;
+			case 3:	if(controller_addPassenger(PassengerList)==1)
+						flagNewChanges = 1;
+			break;
+			case 4: if(controller_editPassenger(PassengerList)==1)
+						flagNewChanges = 1;
+			break;
+			case 5: if(controller_removePassenger(PassengerList)==1)
+						flagNewChanges = 1;
+			break;
+			case 6: controller_ListPassenger(PassengerList);
+			break;
+			case 7: if(controller_sortPassenger(PassengerList) == 1){
+						printf("La lista se ordeno correctamente.\n");
+						system("pause");
+					}else{
+						printf("La lista no ha sido ordenada.\n");
+					}
+			break;
+			case 8: if(flagCsvFileLoaded == 1) {
+
+				if((controller_saveAsText("data.csv" , PassengerList)) == 1) {
+
+					printf("El archivo se guardo correctamente.\n");
+					flagFileSaved = 1;
+					system("pause");
+
+				}else {
+
+					printf("No se pudo guardar el archivo.\n");
+					system("pause");
+				}
+			}else {
+				printf("No se puede guardar el archivo sin antes cargarlo.\n");
+				system("pause");
+			}
+
+
+			break;
+			case 9: if( flagBinFileLoaded == 1) {
+				if((controller_saveAsBinary("data.bin" , PassengerList)) == 1) {
+
+					printf("El archivo se guardo correctamente.\n");
+					flagFileSaved = 1;
+					system("pause");
+
+				}else {
+					printf("No se pudo guardar el archivo.\n");
 					system("pause");
 				}
 			}else {
 
-				printf("No se puede abrir el archivo dos veces.\n");
-				system("pause");
-
-			}
-			break;
-		case 2:
-			if(flagBinFileLoaded == 0){
-				if(flagCsvFileLoaded == 0) {
-
-					if((controller_loadFromBinary("data.bin",PassengerList)) == 1) {
-						flagBinFileLoaded = 1;
-					}
-				}else {
-					printf("El archivo ya fue abierto en modo texto.\n");
-					system("pause");
-				}
-			}else {
-				printf("No se puede abrir el archivo dos veces.\n");
+				printf("No se puede guardar el archivo sin antes cargarlo.\n");
 				system("pause");
 			}
 			break;
-		case 3:	controller_addPassenger(PassengerList);
-		break;
-		case 4: controller_editPassenger(PassengerList);
-		break;
-		case 5: controller_removePassenger(PassengerList);
-		break;
-		case 6: controller_ListPassenger(PassengerList);
-		break;
-		case 8: if(flagCsvFileLoaded == 1) {
 
-			if((controller_saveAsText("data.csv" , PassengerList)) == 1) {
+			case 10:if(flagFileSaved == 0 && (flagBinFileLoaded == 1 || flagCsvFileLoaded == 1)){
+						if(flagNewChanges == 1) {
+							if(askToConfirm("Estas seguro que deseas salir sin guardar? los datos modificados se perderan.\n"
+											"Ingrese 1 para salir, o cualquier otro numero para volver al menu.\n"
+											"Opcion:")==1) {
+								printf("\nHasta la proxima!!!\n");
+								ll_deleteLinkedList(PassengerList);
+								option = 10;
 
-				printf("El archivo se guardo correctamente.\n");
-				flagFileSaved = 1;
-				system("pause");
-
-			}else {
-
-				printf("No se pudo guardar el archivo.\n");
-				system("pause");
-			}
-		}else {
-			printf("No se puede guardar el archivo sin antes cargarlo.\n");
-			system("pause");
+							}else
+								{
+									option = 0;
+								}
+						}else {
+							printf("No se realizaron modificaciones en el archivo.\n"
+								   "Hasta la proxima!!!\n");
+						}
+					}else
+						{
+							printf("\nHasta la proxima!!!\n");
+							ll_deleteLinkedList(PassengerList);
+						}
+			break;
 		}
 
+	}while(option != 10);
 
-		break;
-		case 9: if( flagBinFileLoaded == 1) {
-			if((controller_saveAsBinary("data.bin" , PassengerList)) == 1) {
-
-				printf("El archivo se guardo correctamente.\n");
-				flagFileSaved = 1;
-				system("pause");
-
-			}else {
-				printf("No se pudo guardar el archivo.\n");
-				system("pause");
-			}
-		}else {
-
-			printf("No se puede guardar el archivo sin antes cargarlo.\n");
-			system("pause");
-		}
-		break;
-
-		case 10: if(flagFileSaved == 0){
-
-			printf("Debes guardar el archivo que abriste antes de salir.\n");
-			system("pause");
-			option = 0;
-
-		}else{
-			printf("\nHasta la proxima!!!\n");
-		}
-		break;
-	}
-
-	}while(flagFileSaved == 0 || option != 10);
-
-	return  0;
+	return  EXIT_SUCCESS;
 }
 

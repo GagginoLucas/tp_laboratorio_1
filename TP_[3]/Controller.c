@@ -2,14 +2,6 @@
 
 
 
-
-/** \brief Carga los datos de los pasajeros desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
 int controller_loadFromText(char* path , LinkedList* pArrayListPassenger)
 {
 	int rtn = -1;
@@ -36,13 +28,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListPassenger)
 	return rtn;
 }
 
-/** \brief Carga los datos de los pasajeros desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
+
 int controller_loadFromBinary(char* path , LinkedList* pArrayListPassenger) {
 	int rtn = -1;
 	FILE* pFile = NULL;
@@ -70,39 +56,27 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListPassenger) {
 	return rtn;
 }
 
-/** \brief Alta de pasajero
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
+
 int controller_addPassenger(LinkedList* pArrayListPassenger)
 {
 	int rtn = -1;
 
 	if (loadPassengerData(pArrayListPassenger) == 1) {
 
-		printf("Los datos se cargaron correctamente.");
+		printf("Los datos se cargaron correctamente.\n");
 		rtn = 1;
 		system("pause");
 
 	}else {
 
-		printf("No se pudo realizar la carga del pasajero.");
+		printf("No se pudo realizar la carga del pasajero.\n");
 		system("pause");
 
 	}
 	return rtn;
 }
 
-/** \brief Modificar datos de pasajero
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
+
 int controller_editPassenger(LinkedList* pArrayListPassenger) {
 
 	int rtn = -1;
@@ -119,18 +93,13 @@ int controller_editPassenger(LinkedList* pArrayListPassenger) {
 			system("pause");
 		}
 	}else {
-		printf("No hay datos cargados.\n");
+		printf("No hay pasajerxs cargados.\n");
 		system("pause");
 	}
 	return rtn;
 }
-/** \brief Baja de pasajero
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
+
+
 int controller_removePassenger(LinkedList* pArrayListPassenger)
 {
 	int rtn = -1;
@@ -147,17 +116,14 @@ int controller_removePassenger(LinkedList* pArrayListPassenger)
 			system("pause");
 
 		}
+	}else {
+		printf("No hay pasajerxs cargados.\n");
+		system("pause");
 	}
 	return rtn;
 }
 
-/** \brief Listar pasajeros
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
+
 int controller_ListPassenger(LinkedList* pArrayListPassenger) {
 	int rtn = -1;
 	if(ll_len(pArrayListPassenger) > 0) {
@@ -165,31 +131,88 @@ int controller_ListPassenger(LinkedList* pArrayListPassenger) {
 		rtn = 1;
 		system("pause");
 	}else {
-		printf("No hay datos cargados.\n");
+		printf("No hay pasajerxs cargados.\n");
 		system("pause");
 	}
 	return rtn;
 }
 
-/** \brief Ordenar pasajeros
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
-int controller_sortPassenger(LinkedList* pArrayListPassenger)
-{
-	return 1;
+
+int controller_sortPassenger(LinkedList* pArrayListPassenger) {
+
+	int rtn = -1;
+	int option;
+	int optionOrder;
+	option = controller_printSortMenu();
+	if(option!=8){
+		optionOrder = controller_printSortOrder();
+	}
+	switch(option) {
+
+	case 1: printf("La lista se esta ordenando......\n");
+			ll_sort(pArrayListPassenger, Passenger_sortByID, optionOrder);
+			rtn = 1;
+	break;
+	case 2: printf("La lista se esta ordenando......\n");
+			ll_sort(pArrayListPassenger, Passenger_sortByName, optionOrder);
+			rtn = 1;
+	break;
+	case 3: printf("La lista se esta ordenando......\n");
+			ll_sort(pArrayListPassenger, Passenger_sortByLastName, optionOrder);
+			rtn = 1;
+	break;
+	case 4: printf("La lista se esta ordenando......\n");
+			ll_sort(pArrayListPassenger, Passenger_sortByPrice, optionOrder);
+			rtn = 1;
+	break;
+	case 5: printf("La lista se esta ordenando......\n");
+			ll_sort(pArrayListPassenger, Passenger_sortByTypePassenger, optionOrder);
+			rtn = 1;
+	break;
+	case 6: printf("La lista se esta ordenando......\n");
+			ll_sort(pArrayListPassenger, Passenger_sortByStatusFlight, optionOrder);
+			rtn = 1;
+	break;
+	case 7: printf("La lista se esta ordenando......\n");
+			ll_sort(pArrayListPassenger, Passenger_sortByFlyCode, optionOrder);
+			rtn = 1;
+	break;
+	case 8:
+	break;
+	}
+
+
+	return rtn;
 }
 
-/** \brief Guarda los datos de los pasajeros en el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
+
+int controller_printSortMenu() {
+	int option;
+	get_IntInRange(&option,"SUBMENU SORT\n"
+					"1. Ordenar por ID.\n"
+					"2. Ordenar por nombre.\n"
+					"3. Ordenar por apellido.\n"
+					"4. Ordenar por precio\n"
+					"5. Ordenar por tipo de pasajero.\n"
+					"6. Ordenar por estado de vuelo.\n"
+					"7. Ordenar por codigo de vuelo.\n"
+					"8. Ir atras.\n"
+					"Opcion: ",1,8);
+
+	return option;
+}
+
+int controller_printSortOrder() {
+	int option;
+	get_IntInRange(&option,"De que manera desea ordenar?\n"
+					"0. Descendente.\n"
+					"1. Ascendente.\n"
+					"Opcion: ",0,1);
+
+	return option;
+}
+
+
 int controller_saveAsText(char* path , LinkedList* pArrayListPassenger)
 {
 	int rtn = -1;
@@ -242,13 +265,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListPassenger)
 	return rtn;
 }
 
-/** \brief Guarda los datos de los pasajeros en el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListPassenger LinkedList*
- * \return int
- *
- */
+
 int controller_saveAsBinary(char* path , LinkedList* pArrayListPassenger) {
 
 	int rtn = -1;
@@ -289,6 +306,7 @@ int cotroller_ReadFileLastID() {
 	fclose(file_LastID);
 	return lastID;
 }
+
 void cotroller_WriteFileLastID(int newLastID) {
 
 	FILE* file_LastID = NULL;
@@ -299,3 +317,20 @@ void cotroller_WriteFileLastID(int newLastID) {
 	fclose(file_LastID);
 }
 
+int controller_PrintMainMenu() {
+	int option;
+
+	get_IntInRange(&option, "\nOPCIONES \n1. Cargar los datos en modo texto."
+					"							\n2. Cargar los datos en modo binario."
+					"                         	\n3. Alta de pasajerx."
+					"                        	\n4. Modificar datos de pasajerx."
+					"							\n5. Baja de pasajerx."
+					"                         	\n6. Listar pasajerxs."
+					"							\n7. Ordenar pasajerxs."
+					"							\n8. Guardar los datos de los pasajeros en el archivo data.csv (modo texto)."
+					"							\n9. Guardar los datos de los pasajeros en el archivo data.bin (modo binario)."
+					"							\n10. Salir."
+					"							\n\nOpcion: ",
+					1, 10);
+	return option;
+}

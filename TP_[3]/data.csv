@@ -420,92 +420,92 @@ id,name,lastname,price,flycode,typePassenger,statusFlight
 419,Ed,Vega,18000,TU6789B,EconomyClass,Aterrizado
 420,Lothaire,Campos,12000,TU6789B,EconomyClass,Aterrizado
 421,Neila,Sandoval,15000,TU6789B,EconomyClass,Aterrizado
-422,Jennifer,Orellana,15000,GU2345F,FirstClass,En Vuelo
-423,Keelby,Cardenas,15000,GU2345F,FirstClass,En Vuelo
-424,Chuck,Olivares,33000,GU2345F,FirstClass,En Vuelo
-425,Jordan,Alarcon,33000,GU2345F,FirstClass,En Vuelo
-426,Minnnie,Gallardo,20000,GU2345F,FirstClass,En Vuelo
-427,Carine,Ortiz,33000,GU2345F,FirstClass,En Vuelo
-428,Kelly,Garrido,37000,GU2345F,FirstClass,En Vuelo
-429,Coleman,Salazar,25000,GU2345F,FirstClass,En Vuelo
-430,Pincus,Guzman,42000,GU2345F,FirstClass,En Vuelo
-431,Smitty,Henriquez,15000,GU2345F,FirstClass,En Vuelo
-432,Wade,Saavedra,12000,GU2345F,FirstClass,En Vuelo
-433,Emmit,Navarro,12000,GU2345F,FirstClass,En Vuelo
-434,Brietta,Aguilera,42000,GU2345F,FirstClass,En Vuelo
-435,Wesley,Parra,10000,GU2345F,FirstClass,En Vuelo
-436,Felicdad,Romero,18000,GU2345F,FirstClass,En Vuelo
-437,Any,Aravena,18000,GU2345F,FirstClass,En Vuelo
-438,Gardie,Vargas,12000,GU2345F,FirstClass,En Vuelo
-439,Leelah,Vazquez,25000,GU2345F,FirstClass,En Vuelo
-440,Garold,Caceres,20000,GU2345F,FirstClass,En Vuelo
-441,Regine,Yaniez,10000,GU2345F,FirstClass,En Vuelo
-442,Tam,Leiva,20000,GU2345F,ExecutiveClass,En Vuelo
-443,Davon,Escobar,20000,GU2345F,ExecutiveClass,En Vuelo
-444,Chrissy,Ruiz,18000,GU2345F,ExecutiveClass,En Vuelo
-445,Ozzie,Valdes,20000,GU2345F,ExecutiveClass,En Vuelo
-446,Rina,Vidal,20000,GU2345F,ExecutiveClass,En Vuelo
-447,Guy,Salinas,42000,GU2345F,ExecutiveClass,En Vuelo
-448,Lenora,Zuniiga,18000,GU2345F,ExecutiveClass,En Vuelo
-449,Julietta,Penia,42000,GU2345F,ExecutiveClass,En Vuelo
-450,Alexandr,Godoy,18000,GU2345F,ExecutiveClass,En Vuelo
-451,Margalit,Lagos,15000,GU2345F,ExecutiveClass,En Vuelo
-452,Samara,Maldonado,50000,GU2345F,ExecutiveClass,En Vuelo
-453,Portie,Bustos,15000,GU2345F,ExecutiveClass,En Vuelo
-454,Korella,Medina,33000,GU2345F,ExecutiveClass,En Vuelo
-455,Hilly,Pino,30000,GU2345F,ExecutiveClass,En Vuelo
-456,Leeanne,Palma,10000,GU2345F,ExecutiveClass,En Vuelo
-457,Arnaldo,Moreno,10000,GU2345F,ExecutiveClass,En Vuelo
-458,Kassi,Sanhueza,37000,GU2345F,ExecutiveClass,En Vuelo
-459,Karen,Carvajal,20000,GU2345F,ExecutiveClass,En Vuelo
-460,Mac,Navarrete,20000,GU2345F,ExecutiveClass,En Vuelo
-461,Anthia,Saez,37000,GU2345F,ExecutiveClass,En Vuelo
-462,Marsiella,Alvarado,20000,GU2345F,ExecutiveClass,En Vuelo
-463,Shea,Donoso,12000,GU2345F,ExecutiveClass,En Vuelo
-464,Liana,Poblete,15000,GU2345F,ExecutiveClass,En Vuelo
-465,Carley,Bustamante,12000,GU2345F,ExecutiveClass,En Vuelo
-466,Carlye,Toro,37000,GU2345F,ExecutiveClass,En Vuelo
-467,Svend,Ortega,25000,GU2345F,ExecutiveClass,En Vuelo
-468,Kendell,Venegas,25000,GU2345F,ExecutiveClass,En Vuelo
-469,Chrisy,Guerrero,15000,GU2345F,ExecutiveClass,En Vuelo
-470,Rod,Mendoza,50000,GU2345F,ExecutiveClass,En Vuelo
-471,Ramsay,Farias,20000,GU2345F,ExecutiveClass,En Vuelo
-472,Saidee,San Martin,50000,GU2345F,ExecutiveClass,En Vuelo
-473,Erek,Gonzalez,10000,GU2345F,ExecutiveClass,En Vuelo
-474,Salomi,Fernandez,10000,GU2345F,ExecutiveClass,En Vuelo
-475,Coletta,Rodriguez,50000,GU2345F,ExecutiveClass,En Vuelo
-476,Abigael,Lopez,12000,GU2345F,ExecutiveClass,En Vuelo
-477,Mariele,Martinez,33000,GU2345F,EconomyClass,En Vuelo
-478,Brooke,Sanchez,20000,GU2345F,EconomyClass,En Vuelo
-479,Benita,Perez,25000,GU2345F,EconomyClass,En Vuelo
-480,Marissa,Gomez,37000,GU2345F,EconomyClass,En Vuelo
-481,Lionello,Martin,37000,GU2345F,EconomyClass,En Vuelo
-482,Tori,Jimenez,42000,GU2345F,EconomyClass,En Vuelo
-483,Micheil,Ruiz,37000,GU2345F,EconomyClass,En Vuelo
-484,Kym,Hernandez,20000,GU2345F,EconomyClass,En Vuelo
-485,Melisse,Diaz,10000,GU2345F,EconomyClass,En Vuelo
-486,Bartholomew,Moreno,33000,GU2345F,EconomyClass,En Vuelo
-487,Rorie,alvarez,25000,GU2345F,EconomyClass,En Vuelo
-488,Hedvige,Munioz,37000,GU2345F,EconomyClass,En Vuelo
-489,Dorothea,Romero,15000,GU2345F,EconomyClass,En Vuelo
-490,Tamarah,Alonso,50000,GU2345F,EconomyClass,En Vuelo
-491,Skipton,Gutierrez,10000,GU2345F,EconomyClass,En Vuelo
-492,Minny,Navarro,33000,GU2345F,EconomyClass,En Vuelo
-493,Joshia,Torres,33000,GU2345F,EconomyClass,En Vuelo
-494,Mirilla,Dominguez,30000,GU2345F,EconomyClass,En Vuelo
-495,Willey,Vazquez,15000,GU2345F,EconomyClass,En Vuelo
-496,Conrado,Ramos,50000,GU2345F,EconomyClass,En Vuelo
-497,Fredia,Gonzalez,30000,GU2345F,EconomyClass,En Vuelo
-498,Gretchen,Munioz,12000,GU2345F,EconomyClass,En Vuelo
-499,Bibbie,Rojas,37000,GU2345F,EconomyClass,En Vuelo
-500,Warren,Diaz,25000,GU2345F,EconomyClass,En Vuelo
-501,Gabi,Perez,30000,GU2345F,EconomyClass,En Vuelo
-502,Callie,Soto,50000,GU2345F,EconomyClass,En Vuelo
-503,Patton,Contreras,15000,GU2345F,EconomyClass,En Vuelo
-504,Karie,Silva,25000,GU2345F,EconomyClass,En Vuelo
-505,Martguerita,Martinez,50000,GU2345F,EconomyClass,En Vuelo
-506,Lothaire,Sepulveda,20000,GU2345F,EconomyClass,En Vuelo
-507,Patrice,Morales,37000,GU2345F,EconomyClass,En Vuelo
+422,Jennifer,Orellana,15000,GU2345F,FirstClass,Demorado
+423,Keelby,Cardenas,15000,GU2345F,FirstClass,Demorado
+424,Chuck,Olivares,33000,GU2345F,FirstClass,Demorado
+425,Jordan,Alarcon,33000,GU2345F,FirstClass,Demorado
+426,Minnnie,Gallardo,20000,GU2345F,FirstClass,Demorado
+427,Carine,Ortiz,33000,GU2345F,FirstClass,Demorado
+428,Kelly,Garrido,37000,GU2345F,FirstClass,Demorado
+429,Coleman,Salazar,25000,GU2345F,FirstClass,Demorado
+430,Pincus,Guzman,42000,GU2345F,FirstClass,Demorado
+431,Smitty,Henriquez,15000,GU2345F,FirstClass,Demorado
+432,Wade,Saavedra,12000,GU2345F,FirstClass,Demorado
+433,Emmit,Navarro,12000,GU2345F,FirstClass,Demorado
+434,Brietta,Aguilera,42000,GU2345F,FirstClass,Demorado
+435,Wesley,Parra,10000,GU2345F,FirstClass,Demorado
+436,Felicdad,Romero,18000,GU2345F,FirstClass,Demorado
+437,Any,Aravena,18000,GU2345F,FirstClass,Demorado
+438,Gardie,Vargas,12000,GU2345F,FirstClass,Demorado
+439,Leelah,Vazquez,25000,GU2345F,FirstClass,Demorado
+440,Garold,Caceres,20000,GU2345F,FirstClass,Demorado
+441,Regine,Yaniez,10000,GU2345F,FirstClass,Demorado
+442,Tam,Leiva,20000,GU2345F,ExecutiveClass,Aterrizado
+443,Davon,Escobar,20000,GU2345F,ExecutiveClass,Aterrizado
+444,Chrissy,Ruiz,18000,GU2345F,ExecutiveClass,Aterrizado
+445,Ozzie,Valdes,20000,GU2345F,ExecutiveClass,Aterrizado
+446,Rina,Vidal,20000,GU2345F,ExecutiveClass,Aterrizado
+447,Guy,Salinas,42000,GU2345F,ExecutiveClass,Aterrizado
+448,Lenora,Zuniiga,18000,GU2345F,ExecutiveClass,Aterrizado
+449,Julietta,Penia,42000,GU2345F,ExecutiveClass,Aterrizado
+450,Alexandr,Godoy,18000,GU2345F,ExecutiveClass,Aterrizado
+451,Margalit,Lagos,15000,GU2345F,ExecutiveClass,Aterrizado
+452,Samara,Maldonado,50000,GU2345F,ExecutiveClass,Aterrizado
+453,Portie,Bustos,15000,GU2345F,ExecutiveClass,Aterrizado
+454,Korella,Medina,33000,GU2345F,ExecutiveClass,Aterrizado
+455,Hilly,Pino,30000,GU2345F,ExecutiveClass,Aterrizado
+456,Leeanne,Palma,10000,GU2345F,ExecutiveClass,Aterrizado
+457,Arnaldo,Moreno,10000,GU2345F,ExecutiveClass,Aterrizado
+458,Kassi,Sanhueza,37000,GU2345F,ExecutiveClass,Aterrizado
+459,Karen,Carvajal,20000,GU2345F,ExecutiveClass,Aterrizado
+460,Mac,Navarrete,20000,GU2345F,ExecutiveClass,Aterrizado
+461,Anthia,Saez,37000,GU2345F,ExecutiveClass,Aterrizado
+462,Marsiella,Alvarado,20000,GU2345F,ExecutiveClass,Aterrizado
+463,Shea,Donoso,12000,GU2345F,ExecutiveClass,Aterrizado
+464,Liana,Poblete,15000,GU2345F,ExecutiveClass,Aterrizado
+465,Carley,Bustamante,12000,GU2345F,ExecutiveClass,Aterrizado
+466,Carlye,Toro,37000,GU2345F,ExecutiveClass,Aterrizado
+467,Svend,Ortega,25000,GU2345F,ExecutiveClass,Aterrizado
+468,Kendell,Venegas,25000,GU2345F,ExecutiveClass,Aterrizado
+469,Chrisy,Guerrero,15000,GU2345F,ExecutiveClass,Aterrizado
+470,Rod,Mendoza,50000,GU2345F,ExecutiveClass,Aterrizado
+471,Ramsay,Farias,20000,GU2345F,ExecutiveClass,Aterrizado
+472,Saidee,San Martin,50000,GU2345F,ExecutiveClass,Aterrizado
+473,Erek,Gonzalez,10000,GU2345F,ExecutiveClass,Aterrizado
+474,Salomi,Fernandez,10000,GU2345F,ExecutiveClass,Aterrizado
+475,Coletta,Rodriguez,50000,GU2345F,ExecutiveClass,Aterrizado
+476,Abigael,Lopez,12000,GU2345F,ExecutiveClass,Aterrizado
+477,Mariele,Martinez,33000,GU2345F,EconomyClass,En Horario
+478,Brooke,Sanchez,20000,GU2345F,EconomyClass,En Horario
+479,Benita,Perez,25000,GU2345F,EconomyClass,En Horario
+480,Marissa,Gomez,37000,GU2345F,EconomyClass,En Horario
+481,Lionello,Martin,37000,GU2345F,EconomyClass,En Horario
+482,Tori,Jimenez,42000,GU2345F,EconomyClass,En Horario
+483,Micheil,Ruiz,37000,GU2345F,EconomyClass,En Horario
+484,Kym,Hernandez,20000,GU2345F,EconomyClass,En Horario
+485,Melisse,Diaz,10000,GU2345F,EconomyClass,En Horario
+486,Bartholomew,Moreno,33000,GU2345F,EconomyClass,En Horario
+487,Rorie,alvarez,25000,GU2345F,EconomyClass,En Horario
+488,Hedvige,Munioz,37000,GU2345F,EconomyClass,En Horario
+489,Dorothea,Romero,15000,GU2345F,EconomyClass,En Horario
+490,Tamarah,Alonso,50000,GU2345F,EconomyClass,En Horario
+491,Skipton,Gutierrez,10000,GU2345F,EconomyClass,En Horario
+492,Minny,Navarro,33000,GU2345F,EconomyClass,En Horario
+493,Joshia,Torres,33000,GU2345F,EconomyClass,En Horario
+494,Mirilla,Dominguez,30000,GU2345F,EconomyClass,En Horario
+495,Willey,Vazquez,15000,GU2345F,EconomyClass,En Horario
+496,Conrado,Ramos,50000,GU2345F,EconomyClass,En Horario
+497,Fredia,Gonzalez,30000,GU2345F,EconomyClass,En Horario
+498,Gretchen,Munioz,12000,GU2345F,EconomyClass,En Horario
+499,Bibbie,Rojas,37000,GU2345F,EconomyClass,En Horario
+500,Warren,Diaz,25000,GU2345F,EconomyClass,En Horario
+501,Gabi,Perez,30000,GU2345F,EconomyClass,En Horario
+502,Callie,Soto,50000,GU2345F,EconomyClass,En Horario
+503,Patton,Contreras,15000,GU2345F,EconomyClass,En Horario
+504,Karie,Silva,25000,GU2345F,EconomyClass,En Horario
+505,Martguerita,Martinez,50000,GU2345F,EconomyClass,En Horario
+506,Lothaire,Sepulveda,20000,GU2345F,EconomyClass,En Horario
+507,Patrice,Morales,37000,GU2345F,EconomyClass,En Horario
 508,Lin,Rodriguez,12000,MM0987B,EconomyClass,En Horario
 509,Cornie,Lopez,42000,MM0987B,EconomyClass,En Horario
 510,Irena,Fuentes,20000,MM0987B,EconomyClass,En Horario
@@ -513,66 +513,66 @@ id,name,lastname,price,flycode,typePassenger,statusFlight
 512,Bird,Torres,18000,MM0987B,EconomyClass,En Horario
 513,Lorna,Araya,42000,MM0987B,EconomyClass,En Horario
 514,Vincents,Flores,25000,MM0987B,EconomyClass,En Horario
-515,Torrey,Espinoza,42000,GU2345F,EconomyClass,En Vuelo
-516,Pernell,Valenzuela,50000,GU2345F,EconomyClass,En Vuelo
-517,Danya,Castillo,25000,GU2345F,EconomyClass,En Vuelo
-518,Erda,Tapia,37000,GU2345F,EconomyClass,En Vuelo
-519,Ethe,Reyes,20000,GU2345F,EconomyClass,En Vuelo
-520,Coop,Gutierrez,37000,GU2345F,EconomyClass,En Vuelo
-521,Sheridan,Castro,50000,GU2345F,EconomyClass,En Vuelo
-522,Charles,Pizarro,42000,GU2345F,EconomyClass,En Vuelo
-523,Eddy,alvarez,12000,GU2345F,EconomyClass,En Vuelo
-524,Janey,Vasquez,42000,GU2345F,EconomyClass,En Vuelo
-525,Edan,Sanchez,20000,GU2345F,EconomyClass,En Vuelo
-526,Homer,Fernandez,10000,GU2345F,EconomyClass,En Vuelo
-527,Eveline,Ramirez,37000,GU2345F,EconomyClass,En Vuelo
-528,Helen-elizabeth,Carrasco,20000,GU2345F,EconomyClass,En Vuelo
-529,Daveta,Gomez,20000,GU2345F,EconomyClass,En Vuelo
-530,Mort,Cortes,42000,GU2345F,EconomyClass,En Vuelo
-531,Maxi,Herrera,37000,GU2345F,EconomyClass,En Vuelo
-532,Nathalie,Nuniez,37000,GU2345F,EconomyClass,En Vuelo
-533,Dennison,Jara,25000,GU2345F,EconomyClass,En Vuelo
-534,Bunnie,Vergara,33000,GU2345F,EconomyClass,En Vuelo
+515,Torrey,Espinoza,42000,GU2345F,EconomyClass,En Horario
+516,Pernell,Valenzuela,50000,GU2345F,EconomyClass,En Horario
+517,Danya,Castillo,25000,GU2345F,EconomyClass,En Horario
+518,Erda,Tapia,37000,GU2345F,EconomyClass,En Horario
+519,Ethe,Reyes,20000,GU2345F,EconomyClass,En Horario
+520,Coop,Gutierrez,37000,GU2345F,EconomyClass,En Horario
+521,Sheridan,Castro,50000,GU2345F,EconomyClass,En Horario
+522,Charles,Pizarro,42000,GU2345F,EconomyClass,En Horario
+523,Eddy,alvarez,12000,GU2345F,EconomyClass,En Horario
+524,Janey,Vasquez,42000,GU2345F,EconomyClass,En Horario
+525,Edan,Sanchez,20000,GU2345F,EconomyClass,En Horario
+526,Homer,Fernandez,10000,GU2345F,EconomyClass,En Horario
+527,Eveline,Ramirez,37000,GU2345F,EconomyClass,En Horario
+528,Helen-elizabeth,Carrasco,20000,GU2345F,EconomyClass,En Horario
+529,Daveta,Gomez,20000,GU2345F,EconomyClass,En Horario
+530,Mort,Cortes,42000,GU2345F,EconomyClass,En Horario
+531,Maxi,Herrera,37000,GU2345F,EconomyClass,En Horario
+532,Nathalie,Nuniez,37000,GU2345F,EconomyClass,En Horario
+533,Dennison,Jara,25000,GU2345F,EconomyClass,En Horario
+534,Bunnie,Vergara,33000,GU2345F,EconomyClass,En Horario
 535,Frans,Rivera,33000,BA2491A,EconomyClass,Aterrizado
 536,Delmar,Figueroa,42000,BA2491A,EconomyClass,Aterrizado
 537,Ced,Riquelme,20000,BA2491A,EconomyClass,Aterrizado
 538,Caren,Garcia,12000,BA2491A,EconomyClass,Aterrizado
 539,Christie,Miranda,18000,BA2491A,EconomyClass,Aterrizado
 540,Saunders,Bravo,25000,BA2491A,EconomyClass,Aterrizado
-541,Deny,Vera,18000,GU2345F,EconomyClass,En Vuelo
-542,Gene,Molina,15000,GU2345F,EconomyClass,En Vuelo
-543,Margeaux,Vega,18000,GU2345F,EconomyClass,En Vuelo
-544,Prisca,Campos,18000,GU2345F,EconomyClass,En Vuelo
-545,Domini,Sandoval,18000,GU2345F,EconomyClass,En Vuelo
-546,Henrie,Orellana,50000,GU2345F,EconomyClass,En Vuelo
-547,Marj,Cardenas,18000,GU2345F,EconomyClass,En Vuelo
-548,Mab,Olivares,25000,GU2345F,EconomyClass,En Vuelo
-549,Josiah,Alarcon,12000,GU2345F,EconomyClass,En Vuelo
-550,Mathe,Gallardo,12000,GU2345F,EconomyClass,En Vuelo
-551,Gauthier,Ortiz,12000,GU2345F,EconomyClass,En Vuelo
-552,Delmore,Garrido,33000,GU2345F,EconomyClass,En Vuelo
-553,Lynett,Salazar,37000,GU2345F,EconomyClass,En Vuelo
-554,Lucais,Guzman,42000,GU2345F,EconomyClass,En Vuelo
-555,Clarice,Henriquez,33000,GU2345F,EconomyClass,En Vuelo
-556,Aeriela,Saavedra,37000,GU2345F,EconomyClass,En Vuelo
-557,Babbie,Navarro,15000,GU2345F,EconomyClass,En Vuelo
-558,Caren,Aguilera,15000,GU2345F,EconomyClass,En Vuelo
-559,Jessamine,Parra,18000,GU2345F,EconomyClass,En Vuelo
-560,Hesther,Romero,15000,GU2345F,EconomyClass,En Vuelo
-561,Sasha,Aravena,15000,GU2345F,EconomyClass,En Vuelo
-562,Erica,Vargas,10000,GU2345F,EconomyClass,En Vuelo
-563,Keith,Vazquez,10000,GU2345F,EconomyClass,En Vuelo
-564,Briney,Caceres,12000,GU2345F,EconomyClass,En Vuelo
-565,Rutherford,Yaniez,15000,GU2345F,EconomyClass,En Vuelo
-566,Lemmie,Leiva,18000,GU2345F,EconomyClass,En Vuelo
-567,Dur,Escobar,25000,GU2345F,EconomyClass,En Vuelo
-568,Modesta,Ruiz,33000,GU2345F,EconomyClass,En Vuelo
-569,Carter,Valdes,33000,GU2345F,EconomyClass,En Vuelo
-570,Retha,Vidal,15000,GU2345F,EconomyClass,En Vuelo
-571,Carma,Salinas,33000,GU2345F,EconomyClass,En Vuelo
-572,Antonella,Zuniiga,15000,GU2345F,EconomyClass,En Vuelo
-573,Sutherlan,Penia,10000,GU2345F,EconomyClass,En Vuelo
-574,Phillipe,Godoy,37000,GU2345F,EconomyClass,En Vuelo
+541,Deny,Vera,18000,GU2345F,EconomyClass,En Horario
+542,Gene,Molina,15000,GU2345F,EconomyClass,En Horario
+543,Margeaux,Vega,18000,GU2345F,EconomyClass,En Horario
+544,Prisca,Campos,18000,GU2345F,EconomyClass,En Horario
+545,Domini,Sandoval,18000,GU2345F,EconomyClass,En Horario
+546,Henrie,Orellana,50000,GU2345F,EconomyClass,En Horario
+547,Marj,Cardenas,18000,GU2345F,EconomyClass,En Horario
+548,Mab,Olivares,25000,GU2345F,EconomyClass,En Horario
+549,Josiah,Alarcon,12000,GU2345F,EconomyClass,En Horario
+550,Mathe,Gallardo,12000,GU2345F,EconomyClass,En Horario
+551,Gauthier,Ortiz,12000,GU2345F,EconomyClass,En Horario
+552,Delmore,Garrido,33000,GU2345F,EconomyClass,En Horario
+553,Lynett,Salazar,37000,GU2345F,EconomyClass,En Horario
+554,Lucais,Guzman,42000,GU2345F,EconomyClass,En Horario
+555,Clarice,Henriquez,33000,GU2345F,EconomyClass,En Horario
+556,Aeriela,Saavedra,37000,GU2345F,EconomyClass,En Horario
+557,Babbie,Navarro,15000,GU2345F,EconomyClass,En Horario
+558,Caren,Aguilera,15000,GU2345F,EconomyClass,En Horario
+559,Jessamine,Parra,18000,GU2345F,EconomyClass,En Horario
+560,Hesther,Romero,15000,GU2345F,EconomyClass,En Horario
+561,Sasha,Aravena,15000,GU2345F,EconomyClass,En Horario
+562,Erica,Vargas,10000,GU2345F,EconomyClass,En Horario
+563,Keith,Vazquez,10000,GU2345F,EconomyClass,En Horario
+564,Briney,Caceres,12000,GU2345F,EconomyClass,En Horario
+565,Rutherford,Yaniez,15000,GU2345F,EconomyClass,En Horario
+566,Lemmie,Leiva,18000,GU2345F,EconomyClass,En Horario
+567,Dur,Escobar,25000,GU2345F,EconomyClass,En Horario
+568,Modesta,Ruiz,33000,GU2345F,EconomyClass,En Horario
+569,Carter,Valdes,33000,GU2345F,EconomyClass,En Horario
+570,Retha,Vidal,15000,GU2345F,EconomyClass,En Horario
+571,Carma,Salinas,33000,GU2345F,EconomyClass,En Horario
+572,Antonella,Zuniiga,15000,GU2345F,EconomyClass,En Horario
+573,Sutherlan,Penia,10000,GU2345F,EconomyClass,En Horario
+574,Phillipe,Godoy,37000,GU2345F,EconomyClass,En Horario
 575,Florida,Lagos,37000,HY4567D,FirstClass,Demorado
 576,Corrina,Maldonado,15000,HY4567D,FirstClass,Demorado
 577,Adrianne,Bustos,10000,HY4567D,FirstClass,Demorado

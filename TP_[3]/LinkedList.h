@@ -37,58 +37,78 @@ int test_addNode(LinkedList* this, int nodeIndex,void* pElement);
 
 //Publicas
 
-//CREA LISTA EN MEMORIA
+/// @brief Crea una nueva lista en memoria
+///
+/// @return retorna dirección de memoria de la nueva lista
 LinkedList* ll_newLinkedList(void);
 
-
-//CUANTOS PASAJEROS VA A HABER ADENTRO DE LA LISTA
+/// @brief Calcula tamaño de la lista
+///
+/// @param this lista a calcualr tamaño
+/// @return retorna el tamaño de la lista
 int ll_len(LinkedList* this);
 
 
-
-
-
-//AGREGAR PASAJERO A LA LISTA
+/// @brief Agrega genérico a la linkedlist
+///
+/// @param this lista donde se agregará
+/// @param pElement puntero que se va a agregar
+/// @return
 int ll_add(LinkedList* this, void* pElement);
 
-//DEVUELVE UN GENERICO
+/// @brief Devuelve un generico de la linkedlist
+///
+/// @param this lista de donde se obtendrá
+/// @param index posición index donde se encuentra el genérico
 void* ll_get(LinkedList* this, int index);
 
-//SETEA UNA POSICION EN OTRA, PARA DESPUÉS VOLVER---REMPLAZA ELEMENTO EN EL INDICE QUE YO ESPECIFIQUE
+/// @brief Setea un genérico en linkedlist
+/// @param this lista donde se seteara el genérico
+/// @param index posición index donde se seteará
+/// @param pElement genérico que se va a setear en la lista
+/// @return
 int ll_set(LinkedList* this, int index,void* pElement);
 
-//SE COLA O SE METE EN EL MEDIO EN EL INDICE QUE YO ESPECIFICO
 int ll_push(LinkedList* this, int index, void* pElement);
 
-//SACO UN ELEMENTO DE LA LISTA
+/// @brief Remueve un elemento de la linkedlist
+///
+/// @param this lista donde se encuentra el elemento a remover
+/// @param index posición en la que se encuentra el elemento
+/// @return
 int ll_remove(LinkedList* this,int index);
 
-//LIMPIA LA LISTA, INICIALIZA TODO EN 0 PARA PODER VOLVER A CARGAR
 int ll_clear(LinkedList* this);
 
-//ELIMINA LA LISTA DE LA MEMORIA
+///ELIMINA LA LISTA DE LA MEMORIA
 int ll_deleteLinkedList(LinkedList* this);
 
-//BUSCA INDICE ESPECÍFICO QUE PASO POR PALAMETRO(SIMILAR A BUSCAR POR ID)
+///BUSCA INDICE ESPECÍFICO QUE PASO POR PALAMETRO(SIMILAR A BUSCAR POR ID)
 int ll_indexOf(LinkedList* this, void* pElement);
 
-//SI ESTA VACÍA O NO
+///SI ESTA VACÍA O NO
 int ll_isEmpty(LinkedList* this);
 
-//SACA UN ELEMENTO DE LA LISTA Y LO DEVUELVE
+/// @brief Remueve un elemento de la lista y lo retorna como genérico
+///
+/// @param this lista donde se encuentra el elemento a remover
+/// @param index posición en la que se encuentra el elemento
 void* ll_pop(LinkedList* this,int index);
 
-//
 int ll_contains(LinkedList* this, void* pElement);
 
 int ll_containsAll(LinkedList* this,LinkedList* this2);
 
 
-//ME DEVUELVE UN PEDDAZO DE LA LISTA 		desde hasta
 LinkedList* ll_subList(LinkedList* this,int from,int to);
 
-//DEVUELVE UNA NUEVA LISTA CLONADA
+///DEVUELVE UNA NUEVA LISTA CLONADA
 LinkedList* ll_clone(LinkedList* this);
 
-//ORDENA LA LISTA
+/// @brief Realiza el ordenamiento de la linkedlist
+///
+/// @param this lista a ordenar
+/// @param pFunc función que comparará dos *void
+/// @param order orden en el que se realizará el ordenamiento [0] descendente [1] ascendente
+/// @return
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
