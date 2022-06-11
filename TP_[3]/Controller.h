@@ -2,8 +2,6 @@
 
 #ifndef CONTROLLER_H_
 #define CONTROLLER_H_
-#include <stdio.h>
-#include <stdlib.h>
 #include "LinkedList.h"
 #include "parser.h"
 #include "Passenger.h"

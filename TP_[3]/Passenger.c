@@ -1,52 +1,54 @@
-/*
- * Passenger.c
- *
- *  Created on: 19 may. 2022
- *      Author: Maru
- */
+
 #include "Passenger.h"
 
 
 Passenger* Passenger_new() {
+
 	return (Passenger*)malloc(sizeof(Passenger));
 }
 
 Passenger* Passenger_newParametros( char* idStr,char* nameStr,char* lastNameStr,
-		char* priceStr,char* flyCodeStr,char* typePassengerStr,
-		char* statusFlightStr) {
+									char* priceStr,char* flyCodeStr,char* typePassengerStr,
+									char* statusFlightStr) {
+
 	Passenger* pOnePassenger = NULL;
 	int auxTypePassenger;
 	int auxStatusFlight;
 	auxTypePassenger = typePassengerToInt(typePassengerStr);
 	auxStatusFlight = StatusFlightToInt(statusFlightStr);
 	pOnePassenger = Passenger_new();
-	if(pOnePassenger != NULL){
-		if(Passenger_SetValidatePassengerDataFromFile(pOnePassenger, idStr, nameStr,
-				lastNameStr, priceStr, flyCodeStr,
-				auxTypePassenger, auxStatusFlight)!=1) {
+
+	if(pOnePassenger != NULL) {
+
+		if(Passenger_SetValidatePassengerDataFromFile(	pOnePassenger, idStr, nameStr,
+													  	lastNameStr, priceStr, flyCodeStr,
+														auxTypePassenger, auxStatusFlight)!=1) {
 
 			Passenger_delete(pOnePassenger);
 		}
 	}
+
 	return pOnePassenger;
 }
 
 
 Passenger* Passenger_newPararameters(int auxID, char* auxName, char* auxLastName,
-		float auxPrice, char* auxFlyCode, int auxTypePassenger,
-		int auxStatusFlight) {
+									 float auxPrice, char* auxFlyCode, int auxTypePassenger,
+									 int auxStatusFlight) {
+
 	Passenger* pOnePassenger = NULL;
 	pOnePassenger = Passenger_new();
 	if(pOnePassenger != NULL){
+
 		if(Passenger_SetValidatePassengerData(pOnePassenger,auxID, auxName, auxLastName,
-				auxPrice, auxFlyCode, auxTypePassenger,
-				auxStatusFlight) !=1) {
+											  auxPrice, auxFlyCode, auxTypePassenger,
+											  auxStatusFlight) !=1) {
 
 			Passenger_delete(pOnePassenger);
 		}
 	}
-	return pOnePassenger;
 
+	return pOnePassenger;
 }
 
 
@@ -105,9 +107,9 @@ int Passenger_SetValidatePassengerData(Passenger* pOnePassenger,int auxID, char*
 
 
 
-int Passenger_GetValidatePassengerData(Passenger* pOnePassenger,int* auxID, char* auxName,
-		char* auxLastName, float* auxPrice,int* auxTypePassenger,
-		char* auxFlyCode, int* auxStatusFlight) {
+int Passenger_GetValidatePassengerData(	Passenger* pOnePassenger,int* auxID, char* auxName,
+										char* auxLastName, float* auxPrice,int* auxTypePassenger,
+										char* auxFlyCode, int* auxStatusFlight) {
 
 	int rtn = -1;
 	if(pOnePassenger != NULL) {
@@ -138,6 +140,7 @@ int Passenger_RemovePassenger(LinkedList* pArrayListPassenger) {
 	Passenger* pAuxPassenger = NULL;
 
 	if(pArrayListPassenger!= NULL) {
+
 		Passenger_listPassengers(pArrayListPassenger);
 		do
 		{
@@ -145,15 +148,16 @@ int Passenger_RemovePassenger(LinkedList* pArrayListPassenger) {
 			index = Passenger_FindPassengerById(pArrayListPassenger,idPassenger);
 			if(index != -1) {
 				pAuxPassenger = ll_get(pArrayListPassenger, index);
+				printHeader();
 				Passenger_printOnePassenger(pAuxPassenger);
 				if(askToConfirm("Esta segurx que desea continuar? Los datos se perderan.\n"
 								"Ingrese 1 para continuar, o cualquier otra numero para cancelar.\n"
 						 	 	"Opcion:")==1) {
+
 					pAuxPassenger  = ll_pop(pArrayListPassenger, index);
 					Passenger_delete(pAuxPassenger);
 					rtn = 1;
 				}
-
 			}
 		}while( index == -1  && askToConfirm("No se encontro un pasajerx con esa id, desea volver a buscar?\n"
 											 "Ingrese 1 para volver a buscar, o cualquier otra numero para cancelar.\n"
@@ -165,6 +169,7 @@ int Passenger_RemovePassenger(LinkedList* pArrayListPassenger) {
 }
 
 void printModifyMenu(Passenger aux, int* option) {
+
 	char typePassengerAux[50];
 	typePassengerToChar(aux.typePassenger,typePassengerAux);
 	printf("SELECCIONE QUE OPCION DESEA MODIFICAR\n");
@@ -179,6 +184,7 @@ void printModifyMenu(Passenger aux, int* option) {
 }
 
 int Passenger_ModifyOnePassenger(LinkedList* pArrayListPassenger, int index) {
+
 	int rtn = -1;
 	Passenger* aux = NULL;
 	Passenger auxToModify;
@@ -186,7 +192,6 @@ int Passenger_ModifyOnePassenger(LinkedList* pArrayListPassenger, int index) {
 	if(pArrayListPassenger!= NULL) {
 
 		aux = ll_get(pArrayListPassenger, index);
-		Passenger_printOnePassenger(aux);
 		if(aux != NULL) {
 
 			auxToModify = *aux;
@@ -319,6 +324,7 @@ int loadPassengerData(LinkedList* pArrayListPassenger) {
 
 			ll_add(pArrayListPassenger, aux);
 			rtn = 1;
+
 		}else
 		{
 			Passenger_delete(aux);
@@ -329,6 +335,7 @@ int loadPassengerData(LinkedList* pArrayListPassenger) {
 }
 
 int typePassengerToInt(char* typePassengerStr) {
+
 	int aux;
 	if (strcmp(typePassengerStr, "FirstClass") == 0) {
 
@@ -392,10 +399,11 @@ void statusFlightToChar(int statusInt, char* statusStr) {
 
 void printHeader() {
 
-	printf("%10s %20s %20s %10s %20s %20s %20s\n", "ID", "NOMBRE", "APELLIDO", "PRECIO", "TIPO DE PASAJERO", "FLYCODE", "STATUS");
+	printf("%5s | %15s | %15s | %10s | %10s | %15s | %15s\n", "ID", "NOMBRE", "APELLIDO", "PRECIO", "FLYCODE", "TYPEPASSENGER", "STATUSFLIGHT");
 }
 
 int Passenger_listPassengers(LinkedList* pArrayListPassenger) {
+
 	int rtn;
 	rtn = -1;
 	int i;
@@ -416,6 +424,7 @@ int Passenger_listPassengers(LinkedList* pArrayListPassenger) {
 
 
 int Passenger_printOnePassenger(Passenger* this) {
+
 	int rtn = -1;
 	int auxID;
 	char auxName[NAMESIZE];
@@ -430,12 +439,11 @@ int Passenger_printOnePassenger(Passenger* this) {
 	if(this!=NULL)
 	{
 		if(Passenger_GetValidatePassengerData(this, &auxID, auxName, auxLastName,&auxPrice,
-				&auxTypePassenger,auxFlyCode,&auxStatusFlight)==1) {
+											 &auxTypePassenger,auxFlyCode,&auxStatusFlight)==1) {
 
 			typePassengerToChar(auxTypePassenger, auxTypePassengerStr);
 			statusFlightToChar(auxStatusFlight, auxStatusFlightStr);
-
-			printf("%10d %20s %20s %10.2f %20s %20s %20s\n", auxID,
+			printf("%5d | %15s | %15s | %10.2f | %10s | %15s | %15s\n", auxID,
 					auxName,
 					auxLastName,
 					auxPrice,
@@ -451,6 +459,7 @@ int Passenger_printOnePassenger(Passenger* this) {
 
 
 int Passenger_setStatusFlight(Passenger* this, int statusFlight) {
+
 	int rtn = -1;
 	if(this != NULL && statusFlight > 0) {
 		this->statusFlight = statusFlight;
@@ -469,12 +478,15 @@ int Passenger_getStatusFlight(Passenger* this, int* statusFlight) {
 		*statusFlight = this->statusFlight;
 		rtn = 1;
 	}
+
 	return rtn;
 }
 
 int Passenger_setTypePassenger(Passenger* this, int typePassenger) {
+
 	int rtn = -1;
 	if(this != NULL && typePassenger > 0) {
+
 		this->typePassenger = typePassenger;
 		rtn = 1;
 	}
@@ -491,20 +503,24 @@ int Passenger_getTypePassenger(Passenger* this, int* typePassenger) {
 		*typePassenger = this->typePassenger;
 		rtn = 1;
 	}
+
 	return rtn;
 }
 
 int Passenger_setFlyCode(Passenger* this, char* flyCode) {
+
 	int rtn = -1;
-	if(this != NULL && flyCode != NULL)
-	{
+	if(this != NULL && flyCode != NULL) {
+
 		strcpy(this->flyCode, flyCode);
 		rtn = 1;
 	}
+
 	return rtn;
 }
 
 int Passenger_getFlyCode(Passenger* this,char* flyCode) {
+
 	int rtn = -1;
 
 	if(this!=NULL && flyCode!=NULL) {
@@ -517,20 +533,21 @@ int Passenger_getFlyCode(Passenger* this,char* flyCode) {
 }
 
 int Passenger_setId(Passenger* this, int id) {
+
 	int rtn = -1;
 
-	if(this != NULL && id > 0) //SI LA ESTRUCTURA NO ES NULA Y EL ID ES MAYOR A 0
-	{
-		this->id = id; //LE ASIGNO EL ID A LA ESTRUCTURA
+	if(this != NULL && id > 0) {
+
+		this->id = id;
 		rtn = 1;
 	}
+
 	return rtn;
 }
 
 int Passenger_getId(Passenger* this, int* ID) {
 
 	int rtn = -1;
-
 	if(this!= NULL) {
 
 		*ID = this->id;
@@ -546,6 +563,7 @@ int Passenger_setName(Passenger* this, char* name) {
 		strcpy(this->name, name);
 		rtn = 1;
 	}
+
 	return rtn;
 }
 
@@ -566,34 +584,37 @@ int Passenger_getName(Passenger* this,char* name) {
 int Passenger_setLastName(Passenger* this,char* lastName) {
 
 	int rtn = -1;
-	if(this != NULL && lastName != NULL)
-	{
+	if(this != NULL && lastName != NULL) {
+
 		strcpy(this->lastName, lastName);
 		rtn = 1;
 	}
+
 	return rtn;
 }
 
 int Passenger_getLastName(Passenger* this,char* lastName) {
-	int rtn = -1;
 
+	int rtn = -1;
 	if(this!=NULL && lastName!=NULL) {
 
 		strcpy(lastName,this->lastName);
 		rtn=1;
 	}
+
 	return rtn;
 }
 
 
 int Passenger_setPrice(Passenger* this, float price) {
-	int rtn = -1;
 
-	if(this != NULL && price > 0) //SI LA ESTRUCTURA NO ES NULA Y EL PRECIO ES MAYOR A 0
-			{
-		this->price = price; //LE ASIGNO EL PRECIO A LA ESTRUCTURA
+	int rtn = -1;
+	if(this != NULL && price > 0) {
+
+		this->price = price;
 		rtn = 1;
-			}
+	}
+
 	return rtn;
 }
 
@@ -606,6 +627,7 @@ int Passenger_getPrice(Passenger* this, float* price) {
 		*price = this->price;
 		rtn = 1;
 	}
+
 	return rtn;
 }
 
@@ -616,20 +638,24 @@ int Passenger_sortByID(void* firstID, void* secondID) {
 	Passenger* auxPassengerTwo = (Passenger*) secondID;
 	int idOne;
 	int idTwo;
-
 	if(auxPassengerOne != NULL && auxPassengerTwo != NULL) {
+
 		if(Passenger_getId(auxPassengerOne, &idOne) == 1 &&
 		   Passenger_getId(auxPassengerTwo, &idTwo) == 1) {
+
 			if(idOne > idTwo) {
+
 				rtn = 1;
 			}else {
 				if(idOne < idTwo) {
+
 					rtn = -1;
 				}
 			}
 
 		}
 	}
+
 	return rtn;
 }
 
@@ -643,10 +669,10 @@ int Passenger_sortByName(void* firstName, void* secondName) {
 	char nameTwo[NAMESIZE];
 
 	if(auxPassengerOne != NULL && auxPassengerTwo != NULL) {
+
 		if(Passenger_getName(auxPassengerOne, nameOne) == 1 && Passenger_getName(auxPassengerTwo, nameTwo) == 1) {
 
-		rtn = strcmp(nameOne, nameTwo);
-
+			rtn = strcmp(nameOne, nameTwo);
 		}
 	}
 
@@ -662,10 +688,10 @@ int Passenger_sortByLastName(void* firstLastName, void* secondLastName) {
 	char LastNameTwo[NAMESIZE];
 
 	if(auxPassengerOne != NULL && auxPassengerTwo != NULL) {
+
 		if(Passenger_getLastName(auxPassengerOne, LastNameOne) == 1 && Passenger_getLastName(auxPassengerTwo, LastNameTwo) == 1) {
 
 		rtn = strcmp(LastNameOne, LastNameTwo);
-
 		}
 	}
 
@@ -681,17 +707,23 @@ int Passenger_sortByPrice(void* firstPrice, void* secondPrice) {
 	float PriceTwo;
 
 	if(auxPassengerOne != NULL && auxPassengerTwo != NULL) {
+
 		if(Passenger_getPrice(auxPassengerOne, &PriceOne) == 1 &&
 		   Passenger_getPrice(auxPassengerTwo, &PriceTwo) == 1) {
+
 			if(PriceOne > PriceTwo) {
+
 				rtn = 1;
 			}else {
+
 				if(PriceOne < PriceTwo) {
+
 					rtn = -1;
 				}
 			}
 		}
 	}
+
 	return rtn;
 }
 
@@ -704,12 +736,13 @@ int Passenger_sortByFlyCode(void* firstFlyCode, void* secondFlyCode) {
 	char FlyCodeTwo[FLYCODESIZE];
 
 	if(auxPassengerOne != NULL && auxPassengerTwo != NULL) {
+
 		if(Passenger_getFlyCode(auxPassengerOne, FlyCodeOne) == 1 && Passenger_getFlyCode(auxPassengerTwo, FlyCodeTwo) == 1) {
 
 		rtn = strcmp(FlyCodeOne, FlyCodeTwo);
-
 		}
 	}
+
 	return rtn;
 }
 
@@ -723,11 +756,14 @@ int Passenger_sortByStatusFlight(void* firstStatusFlight, void* secondStatusFlig
 	int StatusFlightTwo;
 
 	if(auxPassengerOne != NULL && auxPassengerTwo != NULL) {
+
 		if(Passenger_getStatusFlight(auxPassengerOne, &StatusFlightOne) == 1 &&
 		   Passenger_getStatusFlight(auxPassengerTwo, &StatusFlightTwo) == 1) {
+
 			if(StatusFlightOne > StatusFlightTwo) {
 				rtn = 1;
 			}else {
+
 				if(StatusFlightOne < StatusFlightTwo) {
 					rtn = -1;
 				}
@@ -735,6 +771,7 @@ int Passenger_sortByStatusFlight(void* firstStatusFlight, void* secondStatusFlig
 
 		}
 	}
+
 	return rtn;
 }
 
@@ -747,12 +784,17 @@ int Passenger_sortByTypePassenger(void* firstTypePassenger, void* secondTypePass
 	int TypePassengerTwo;
 
 	if(auxPassengerOne != NULL && auxPassengerTwo != NULL) {
+
 		if(Passenger_getTypePassenger(auxPassengerOne, &TypePassengerOne) == 1 &&
 		   Passenger_getTypePassenger(auxPassengerTwo, &TypePassengerTwo) == 1) {
+
 			if(TypePassengerOne > TypePassengerTwo) {
+
 				rtn = 1;
 			}else {
+
 				if(TypePassengerOne < TypePassengerTwo) {
+
 					rtn = -1;
 				}
 			}
