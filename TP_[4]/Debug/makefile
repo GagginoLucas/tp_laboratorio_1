@@ -43,7 +43,7 @@ main-build: TP_[4]
 # Tool invocations
 TP_[4]: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
-	@echo 'Invoking: GCC C Linker'
+	@echo 'Invoking: Cygwin C Linker'
 	gcc  -o "TP_[4]" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
