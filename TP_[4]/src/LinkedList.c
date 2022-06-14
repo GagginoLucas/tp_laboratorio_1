@@ -167,10 +167,10 @@ int ll_add(LinkedList* this, void* pElement) {
 	return addNode(this, llLen, pElement);
 }
 
-/** \brief Retorna un puntero al elemento que se encuentra en el índice especificado
+/** \brief Permite realizar el test de la funcion addNode la cual es privada
  *
  * \param this LinkedList* Puntero a la lista
- * \param index int Ubicacion del elemento a obtener
+ * \param nodeIndex int Ubicacion del elemento a obtener
  * \return void* Retorna    (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
                             (pElement) Si funciono correctamente
  *
