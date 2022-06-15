@@ -103,8 +103,8 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement) {
 	Node* pAuxNode = NULL;
 	Node* pNewNode = NULL;
 	int llLen = ll_len(this);
-
 	int flagNewNode = -1;
+
 	if (this != NULL && nodeIndex <= llLen && nodeIndex >= 0) {
 
 		pNewNode = (Node*)malloc(sizeof(Node));
@@ -112,23 +112,22 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement) {
 
 			if(nodeIndex == 0) { //SI ES EL PRIMER NODO
 
-				pAuxNode = getNode(this, nodeIndex);
-				pNewNode->pNextNode = pAuxNode;
-				this->pFirstNode = pNewNode;
+				pNewNode->pNextNode = this->pFirstNode; //Al nuevo nodo lo apunto al nodo que apuntaba la cabecera ya sea null o otro nodo
+				this->pFirstNode = pNewNode; //convierto el nuevo nodo en cabecera
 				flagNewNode = 0;
 			} else {
 
-				pAuxNode = getNode(this, nodeIndex-1);
-				pNewNode->pNextNode = pAuxNode->pNextNode;
-				pAuxNode->pNextNode=pNewNode;
+				pAuxNode = getNode(this, nodeIndex-1); //De la posición donde se va a crear el nuevo nodo, obtengo el nodo anterior
+				pNewNode->pNextNode = pAuxNode->pNextNode; //El nuevo nodo va a apuntar a donde estaba apuntando el nodo obtenido
+				pAuxNode->pNextNode = pNewNode; //El siguiente nodo del nodo obtenido va a ser el nuevo nodo
 				flagNewNode = 0;
 			}
 
 			if(!flagNewNode) {
 
-				pNewNode->pElement = pElement;
-				llLen++;
-				this->size=llLen;
+				pNewNode->pElement = pElement; //Le paso el elemento al nodo nuevo
+				llLen++; //Al size total de la linked list le sumo 1
+				this->size=llLen; //aumento el size de la linkedlist
 				rtn = 0;
 			}
 		}
@@ -167,10 +166,10 @@ int ll_add(LinkedList* this, void* pElement) {
 	return addNode(this, llLen, pElement);
 }
 
-/** \brief Permite realizar el test de la funcion addNode la cual es privada
+/** \brief Retorna un puntero al elemento que se encuentra en el índice especificado
  *
  * \param this LinkedList* Puntero a la lista
- * \param nodeIndex int Ubicacion del elemento a obtener
+ * \param index int Ubicacion del elemento a obtener
  * \return void* Retorna    (NULL) Error: si el puntero a la lista es NULL o (si el indice es menor a 0 o mayor al len de la lista)
                             (pElement) Si funciono correctamente
  *
@@ -244,24 +243,24 @@ int ll_remove(LinkedList* this,int index) {
 
 	if(this != NULL && index >= 0 && index < llLen) {
 
-		if(index == 0) {
-			pNode = getNode(this, index);
+		if(index == 0) {  //en caso de que sea el primer nodo
+			pNode = getNode(this, index); //obtengo el nodo
 
 			if(pNode != NULL) {
 
-				this->pFirstNode = pNode->pNextNode;
-				pAuxToRemove = pNode;
+				this->pFirstNode = pNode->pNextNode; //engancho a el primer nodo de la lista con el nodo al que apunta el nodo que voy a eliminar
+				pAuxToRemove = pNode; //este vuela
 			}
 
 		}else
 		{
-			pNode = getNode(this, index-1);
+			pNode = getNode(this, index-1); // obtengo una posición anterior al nodo que voy a eliminar
 			if(pNode != NULL) {
 
-				pAuxToRemove = pNode->pNextNode;
-				if(index == llLen-1) {
+				pAuxToRemove = pNode->pNextNode; //El auxiliar a remover va a ser el nodo al que apunta el nodo que obtuve
+				if(index == llLen-1) { //si el nodo a remover es el último
 
-					pNode->pNextNode = NULL;
+					pNode->pNextNode = NULL; //El
 				}else{
 
 					pNode->pNextNode = pAuxToRemove->pNextNode;
@@ -512,7 +511,7 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
 	int i;
 	int llLen = ll_len(this);
 
-	if(this != NULL && from >= 0 && from <= to && to <= llLen) {
+	if(this != NULL && from <= llLen && from >= 0 && from <= to && to <= llLen) {
 
 		cloneArray = ll_newLinkedList();
 
@@ -570,9 +569,50 @@ LinkedList* ll_clone(LinkedList* this) {
  */
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
-	int returnAux =-1;
 
-	return returnAux;
+	int i, j;
+	int rtn = -1;
+	int llLen = ll_len(this);
+	void* pElement = NULL;
+	void* pElemento = NULL;
 
+	if(this != NULL && pFunc!= NULL && llLen > 0) { //El problema que tenía era porque me faltaba validar que pFunc sea distinto de NULL
+
+		if(order == 0) {
+			for (i = 0; i<llLen-1; i++) {
+
+				for(j = i+1; j<llLen; j++) {
+
+					pElement = ll_get(this, i);
+					pElemento = ll_get(this, j);
+					if((pFunc(pElement, pElemento) < 0) ) { // ORDENO DE MANERA DESCENDENTE
+
+						ll_set(this, i, pElemento);
+						ll_set(this, j, pElement);
+						rtn = 0;
+					}
+				}
+			}
+		}else if(order == 1){
+
+			for (i = 0; i<llLen-1; i++) {
+
+				for(j = i+1; j<llLen; j++) {
+
+					pElement = ll_get(this, i);
+					pElemento = ll_get(this, j);
+					if((pFunc(pElement, pElemento) > 0)) { // ORDENO DE MANERA DESCENDENTE
+
+						ll_set(this, i, pElemento);
+						ll_set(this, j, pElement);
+						rtn = 0;
+					}
+				}
+			}
+		}
+
+	}
+
+	return rtn;
 }
 
